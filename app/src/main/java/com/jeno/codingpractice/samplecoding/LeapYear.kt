@@ -1,20 +1,16 @@
 package com.jeno.codingpractice.samplecoding
 
-class LeapYear {
 
+fun isLeapYear(year: Int) : Boolean{
+    return ((year % 4 == 0 && year % 100 !=0) || year % 400 == 0)
 }
 
-fun main(args : Array<String>){
-    var year = 2012
-    var leap = false
-    if (year % 4 == 0 ){
-        if (year % 100 == 0){
-            leap = year % 400 ==0
-        }else{
-            leap = true
-        }
+fun main(){
+    val year = 2028
+    if (isLeapYear(year)){
+        println("$year is Leap year")
     }else{
-        leap = false
+        println("$year is not Leap year")
     }
-    println("$year is Leap year : $leap")
+
 }
